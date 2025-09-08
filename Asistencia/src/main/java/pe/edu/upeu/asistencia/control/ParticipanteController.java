@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.util.Callback;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import pe.edu.upeu.asistencia.enums.Carrera;
@@ -14,6 +15,7 @@ import pe.edu.upeu.asistencia.enums.TipoParticipante;
 import pe.edu.upeu.asistencia.modelo.Participante;
 import pe.edu.upeu.asistencia.servicio.ParticipanteServicioI;
 
+@Slf4j
 @Controller
 public class ParticipanteController {
 
@@ -35,6 +37,7 @@ public class ParticipanteController {
     ParticipanteServicioI ps;
     TableColumn<Participante, String> dniCol, nombreCol, apellidoCol, carreraCol, tipoParticipanteCol;
     TableColumn<Participante, Void> opcCol;
+    int indexEdit=-1;
 
     @FXML
     public void initialize() {
@@ -64,8 +67,13 @@ public class ParticipanteController {
         p.setApellidos(new SimpleStringProperty(txtApellidos.getText()));
         p.setCarrera(cbxCarrera.getSelectionModel().getSelectedItem());
         p.setTipoParticipante(cbxTipoParticipante.getSelectionModel().getSelectedItem());
+        if(indexEdit==-1){
+            ps.save(p);
+        }else{
+            ps.save(p,indexEdit);
+            indexEdit=-1;
+        }
 
-        ps.save(p);
         limpiarFormulario();
         listarPartipantes();
     }
@@ -88,6 +96,9 @@ public class ParticipanteController {
         carreraCol.setCellValueFactory(
                 cellData -> new SimpleStringProperty(cellData.getValue().getCarrera().toString())
         );
+        tipoParticipanteCol.setCellValueFactory(
+                cellData -> new SimpleStringProperty(cellData.getValue().getTipoParticipante().toString())
+        );
         agregarAccionesButton();
         listaParticipantes = FXCollections.observableList(ps.findAll());
         tableView.setItems(listaParticipantes);
@@ -98,10 +109,12 @@ public class ParticipanteController {
 
     }
     public void editarPartipante(Participante p, int index) {
-        txtDni.setText(p.getDni().toString());
-        txtNombres.setText(p.getNombre().toString());
-        txtApellidos.setText(p.getApellidos().toString());
-
+        txtDni.setText(p.getDni().getValue());
+        txtNombres.setText(p.getNombre().getValue());
+        txtApellidos.setText(p.getApellidos().getValue());
+        cbxTipoParticipante.getSelectionModel().select(p.getTipoParticipante());
+        cbxCarrera.getSelectionModel().select(p.getCarrera());
+        indexEdit=index;
     }
 
     public void agregarAccionesButton(){
