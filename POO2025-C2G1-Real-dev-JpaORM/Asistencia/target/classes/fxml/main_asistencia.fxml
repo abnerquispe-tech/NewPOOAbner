@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.paint.Color?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="pe.edu.upeu.asistencia.control.AsistenciaController"
+            prefWidth="800" prefHeight="550"
+            style="-fx-background-color: linear-gradient(to bottom right, #0D0D0D, #1E3A3A);">
+
+    <VBox alignment="CENTER" spacing="25" prefWidth="800" prefHeight="550">
+
+        <!-- 🔹 Título -->
+        <Label text="LOGIN DEPORT - Acceso de Usuarios"
+               style="-fx-font-size: 28px; -fx-font-weight: bold;
+                      -fx-text-fill: #76FF03;
+                      -fx-effect: dropshadow(gaussian, black, 5, 0, 2, 2);" />
+
+        <!-- 🔹 Imagen del logo deportivo -->
+        <ImageView fitHeight="110" fitWidth="110">
+            <image>
+                <Image url="@../images/deporte.jpg" />
+            </image>
+        </ImageView>
+
+        <!-- 🔹 Panel del formulario -->
+        <VBox spacing="20" alignment="CENTER"
+              style="-fx-background-color: rgba(255,255,255,0.1);
+                     -fx-background-radius: 20;
+                     -fx-padding: 30;
+                     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 15, 0, 0, 4);">
+
+            <GridPane hgap="15" vgap="18" alignment="CENTER">
+
+                <Label text="Nombre de Usuario:" textFill="white"
+                       GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                <TextField fx:id="txtNombre" promptText="Ingrese su nombre completo"
+                           GridPane.rowIndex="0" GridPane.columnIndex="1"
+                           prefWidth="280"
+                           style="-fx-background-radius: 8; -fx-padding: 6;
+                                  -fx-background-color: rgba(255,255,255,0.9);" />
+
+                <Label text="Código de Usuario:" textFill="white"
+                       GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                <TextField fx:id="txtCodigo" promptText="Ingrese su código"
+                           GridPane.rowIndex="1" GridPane.columnIndex="1"
+                           prefWidth="280"
+                           style="-fx-background-radius: 8; -fx-padding: 6;
+                                  -fx-background-color: rgba(255,255,255,0.9);" />
+
+                <Label text="Correo Electrónico:" textFill="white"
+                       GridPane.rowIndex="2" GridPane.columnIndex="0" />
+                <TextField fx:id="txtCorreo" promptText="Ingrese su correo electrónico"
+                           GridPane.rowIndex="2" GridPane.columnIndex="1"
+                           prefWidth="280"
+                           style="-fx-background-radius: 8; -fx-padding: 6;
+                                  -fx-background-color: rgba(255,255,255,0.9);" />
+
+                <!-- 🔹 Botones de acción -->
+                <HBox GridPane.rowIndex="3" GridPane.columnIndex="0" GridPane.columnSpan="2"
+                      alignment="CENTER" spacing="15">
+
+                    <Button fx:id="btnIngresar" text="Ingresar"
+                            onAction="#enviarDatos"
+                            style="-fx-background-color: #76FF03;
+                                   -fx-text-fill: #0D0D0D;
+                                   -fx-font-weight: bold;
+                                   -fx-background-radius: 12;
+                                   -fx-padding: 8 20;
+                                   -fx-cursor: hand;
+                                   -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 5, 0, 0, 2);" />
+
+                    <!-- 🔹 Nuevo botón Registrar -->
+                    <Button fx:id="btnRegistrar" text="Registrar"
+                            onAction="#registrarUsuario"
+                            style="-fx-background-color: #03A9F4;
+                                   -fx-text-fill: white;
+                                   -fx-font-weight: bold;
+                                   -fx-background-radius: 12;
+                                   -fx-padding: 8 20;
+                                   -fx-cursor: hand;
+                                   -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 5, 0, 0, 2);" />
+
+                    <Button fx:id="btnCancelar" text="Cancelar"
+                            onAction="#cancelarAccion"
+                            style="-fx-background-color: #FF5252;
+                                   -fx-text-fill: white;
+                                   -fx-font-weight: bold;
+                                   -fx-background-radius: 12;
+                                   -fx-padding: 8 20;
+                                   -fx-cursor: hand;
+                                   -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 5, 0, 0, 2);" />
+                </HBox>
+
+            </GridPane>
+        </VBox>
+
+        <!-- 🔹 Lista de usuarios -->
+        <Label text="Usuarios Registrados"
+               style="-fx-font-size: 16px; -fx-text-fill: #76FF03; -fx-font-weight: bold;" />
+
+        <TextArea fx:id="txtAreaUsuarios"
+                  prefWidth="420" prefHeight="130"
+                  editable="false" wrapText="true"
+                  style="-fx-background-color: rgba(255,255,255,0.9);
+                         -fx-border-color: #76FF03;
+                         -fx-border-radius: 10;
+                         -fx-background-radius: 10;
+                         -fx-padding: 10;" />
+
+        <!-- 🔹 Mensaje de resultado -->
+        <Label fx:id="lblResultado"
+               text=""
+               style="-fx-font-size: 14px; -fx-text-fill: #00E676; -fx-font-weight: bold;" />
+
+    </VBox>
+
+</AnchorPane>

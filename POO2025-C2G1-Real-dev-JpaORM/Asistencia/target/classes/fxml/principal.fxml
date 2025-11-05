@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="pe.edu.upeu.asistencia.control.PrincipalController"
+            prefWidth="600" prefHeight="400">
+
+    <!-- Etiqueta de bienvenida -->
+    <Label text="¡Bienvenido al Sistema de Asistencia!"
+           layoutX="100" layoutY="50"
+           style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+    <!-- Botón de ejemplo -->
+    <Button text="Presiona aquí"
+            layoutX="250" layoutY="150"
+            onAction="#handleButtonClick" />
+</AnchorPane>

@@ -1,0 +1,103 @@
+<html>
+<head>
+<title>registro_usuario.fxml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #d5b778;}
+.s1 { color: #bcbec4;}
+.s2 { color: #6aab73;}
+.s3 { color: #bcbec4;}
+.s4 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+registro_usuario.fxml</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;?</span><span class="s1">xml version</span><span class="s2">=&quot;1.0&quot; </span><span class="s1">encoding</span><span class="s2">=&quot;UTF-8&quot;</span><span class="s0">?&gt;</span>
+
+<span class="s0">&lt;?</span><span class="s1">import </span><span class="s2">javafx.geometry.Insets</span><span class="s0">?&gt;</span>
+<span class="s0">&lt;?</span><span class="s1">import </span><span class="s2">javafx.scene.control.*</span><span class="s0">?&gt;</span>
+<span class="s0">&lt;?</span><span class="s1">import </span><span class="s2">javafx.scene.layout.*</span><span class="s0">?&gt;</span>
+<span class="s0">&lt;?</span><span class="s1">import </span><span class="s2">javafx.scene.text.*</span><span class="s0">?&gt;</span>
+
+<span class="s0">&lt;AnchorPane </span><span class="s1">xmlns</span><span class="s2">=&quot;http://javafx.com/javafx/17.0.12&quot;</span>
+            <span class="s1">xmlns:fx</span><span class="s2">=&quot;http://javafx.com/fxml/1&quot;</span>
+            <span class="s1">fx:controller</span><span class="s2">=&quot;pe.edu.upeu.asistencia.control.RegistroUsuarioController&quot;</span>
+            <span class="s1">prefWidth</span><span class="s2">=&quot;700.0&quot; </span><span class="s1">prefHeight</span><span class="s2">=&quot;520.0&quot;</span>
+            <span class="s1">style</span><span class="s2">=&quot;-fx-background-color: linear-gradient(to bottom right, #004D40, #00796B); 
+                   -fx-background-radius: 15;&quot;</span><span class="s0">&gt;</span>
+
+    <span class="s0">&lt;VBox </span><span class="s1">spacing</span><span class="s2">=&quot;15.0&quot; </span><span class="s1">alignment</span><span class="s2">=&quot;TOP_CENTER&quot; </span><span class="s1">prefWidth</span><span class="s2">=&quot;700&quot; </span><span class="s1">prefHeight</span><span class="s2">=&quot;520&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;padding&gt;</span>
+            <span class="s0">&lt;Insets </span><span class="s1">top</span><span class="s2">=&quot;20&quot; </span><span class="s1">right</span><span class="s2">=&quot;20&quot; </span><span class="s1">bottom</span><span class="s2">=&quot;20&quot; </span><span class="s1">left</span><span class="s2">=&quot;20&quot;</span><span class="s0">/&gt;</span>
+        <span class="s0">&lt;/padding&gt;</span>
+
+        <span class="s4">&lt;!-- 🟢 Título --&gt;</span>
+        <span class="s0">&lt;Label </span><span class="s1">text</span><span class="s2">=&quot;Registro de Nuevo Usuario&quot;</span>
+               <span class="s1">style</span><span class="s2">=&quot;-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: white;&quot; </span><span class="s0">/&gt;</span>
+
+        <span class="s4">&lt;!-- 🟢 Formulario --&gt;</span>
+        <span class="s0">&lt;GridPane </span><span class="s1">hgap</span><span class="s2">=&quot;15&quot; </span><span class="s1">vgap</span><span class="s2">=&quot;15&quot; </span><span class="s1">alignment</span><span class="s2">=&quot;CENTER&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;TextField </span><span class="s1">fx:id</span><span class="s2">=&quot;txtNombre&quot;</span>
+                       <span class="s1">promptText</span><span class="s2">=&quot;Nombre completo&quot;</span>
+                       <span class="s1">GridPane.rowIndex</span><span class="s2">=&quot;0&quot; </span><span class="s1">GridPane.columnIndex</span><span class="s2">=&quot;0&quot; </span><span class="s1">GridPane.columnSpan</span><span class="s2">=&quot;2&quot;</span>
+                       <span class="s1">style</span><span class="s2">=&quot;-fx-background-radius: 8; -fx-background-color: rgba(255,255,255,0.9); 
+                               -fx-font-size: 14px;&quot; </span><span class="s0">/&gt;</span>
+
+            <span class="s0">&lt;TextField </span><span class="s1">fx:id</span><span class="s2">=&quot;txtCorreo&quot;</span>
+                       <span class="s1">promptText</span><span class="s2">=&quot;Correo electrónico&quot;</span>
+                       <span class="s1">GridPane.rowIndex</span><span class="s2">=&quot;1&quot; </span><span class="s1">GridPane.columnIndex</span><span class="s2">=&quot;0&quot; </span><span class="s1">GridPane.columnSpan</span><span class="s2">=&quot;2&quot;</span>
+                       <span class="s1">style</span><span class="s2">=&quot;-fx-background-radius: 8; -fx-background-color: rgba(255,255,255,0.9); 
+                               -fx-font-size: 14px;&quot; </span><span class="s0">/&gt;</span>
+
+            <span class="s0">&lt;TextField </span><span class="s1">fx:id</span><span class="s2">=&quot;txtCodigo&quot;</span>
+                       <span class="s1">promptText</span><span class="s2">=&quot;Código de usuario&quot;</span>
+                       <span class="s1">GridPane.rowIndex</span><span class="s2">=&quot;2&quot; </span><span class="s1">GridPane.columnIndex</span><span class="s2">=&quot;0&quot; </span><span class="s1">GridPane.columnSpan</span><span class="s2">=&quot;2&quot;</span>
+                       <span class="s1">style</span><span class="s2">=&quot;-fx-background-radius: 8; -fx-background-color: rgba(255,255,255,0.9); 
+                               -fx-font-size: 14px;&quot; </span><span class="s0">/&gt;</span>
+
+            <span class="s0">&lt;Button </span><span class="s1">text</span><span class="s2">=&quot;Guardar&quot;</span>
+                    <span class="s1">onAction</span><span class="s2">=&quot;#guardarUsuario&quot;</span>
+                    <span class="s1">GridPane.rowIndex</span><span class="s2">=&quot;3&quot; </span><span class="s1">GridPane.columnIndex</span><span class="s2">=&quot;0&quot;</span>
+                    <span class="s1">style</span><span class="s2">=&quot;-fx-background-color: #76FF03; 
+                           -fx-text-fill: black; 
+                           -fx-font-weight: bold; 
+                           -fx-background-radius: 10; 
+                           -fx-padding: 8 25; 
+                           -fx-font-size: 14px;&quot; </span><span class="s0">/&gt;</span>
+
+            <span class="s0">&lt;Button </span><span class="s1">text</span><span class="s2">=&quot;Limpiar&quot;</span>
+                    <span class="s1">onAction</span><span class="s2">=&quot;#limpiarCampos&quot;</span>
+                    <span class="s1">GridPane.rowIndex</span><span class="s2">=&quot;3&quot; </span><span class="s1">GridPane.columnIndex</span><span class="s2">=&quot;1&quot;</span>
+                    <span class="s1">style</span><span class="s2">=&quot;-fx-background-color: #FFCA28; 
+                           -fx-text-fill: black; 
+                           -fx-font-weight: bold; 
+                           -fx-background-radius: 10; 
+                           -fx-padding: 8 25; 
+                           -fx-font-size: 14px;&quot; </span><span class="s0">/&gt;</span>
+        <span class="s0">&lt;/GridPane&gt;</span>
+
+        <span class="s4">&lt;!-- 🟢 Mensaje de validación --&gt;</span>
+        <span class="s0">&lt;Label </span><span class="s1">fx:id</span><span class="s2">=&quot;lblMensaje&quot;</span>
+               <span class="s1">text</span><span class="s2">=&quot;&quot;</span>
+               <span class="s1">wrapText</span><span class="s2">=&quot;true&quot;</span>
+               <span class="s1">style</span><span class="s2">=&quot;-fx-font-size: 14px; -fx-text-fill: white; -fx-font-weight: bold;&quot; </span><span class="s0">/&gt;</span>
+
+        <span class="s4">&lt;!-- 🟢 Tabla de usuarios --&gt;</span>
+        <span class="s0">&lt;TableView </span><span class="s1">fx:id</span><span class="s2">=&quot;tablaUsuarios&quot; </span><span class="s1">prefHeight</span><span class="s2">=&quot;220&quot; </span><span class="s1">prefWidth</span><span class="s2">=&quot;640&quot;</span>
+                   <span class="s1">style</span><span class="s2">=&quot;-fx-background-radius: 10; -fx-background-color: rgba(255,255,255,0.9);&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;columns&gt;</span>
+                <span class="s0">&lt;TableColumn </span><span class="s1">fx:id</span><span class="s2">=&quot;colNombre&quot; </span><span class="s1">text</span><span class="s2">=&quot;Nombre&quot; </span><span class="s1">prefWidth</span><span class="s2">=&quot;200&quot;</span><span class="s0">/&gt;</span>
+                <span class="s0">&lt;TableColumn </span><span class="s1">fx:id</span><span class="s2">=&quot;colCorreo&quot; </span><span class="s1">text</span><span class="s2">=&quot;Correo Electrónico&quot; </span><span class="s1">prefWidth</span><span class="s2">=&quot;220&quot;</span><span class="s0">/&gt;</span>
+                <span class="s0">&lt;TableColumn </span><span class="s1">fx:id</span><span class="s2">=&quot;colCodigo&quot; </span><span class="s1">text</span><span class="s2">=&quot;Código&quot; </span><span class="s1">prefWidth</span><span class="s2">=&quot;120&quot;</span><span class="s0">/&gt;</span>
+                <span class="s0">&lt;TableColumn </span><span class="s1">fx:id</span><span class="s2">=&quot;colAcciones&quot; </span><span class="s1">text</span><span class="s2">=&quot;Acciones&quot; </span><span class="s1">prefWidth</span><span class="s2">=&quot;100&quot;</span><span class="s0">/&gt;</span>
+            <span class="s0">&lt;/columns&gt;</span>
+        <span class="s0">&lt;/TableView&gt;</span>
+    <span class="s0">&lt;/VBox&gt;</span>
+<span class="s0">&lt;/AnchorPane&gt;</span>
+</pre>
+</body>
+</html>
